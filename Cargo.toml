@@ -1,16 +1,16 @@
 [package]
-authors = ["Kavin Gnanapandithan <kavin.balag@gmail.com>"]
+authors = ["Kavin Gnanapandithan kavin.balag@gmail.com"]
 edition = "2018"
 readme = "README.md"
-name = "stm32f4_template"
+name = "pwm-esc-controller"
 version = "0.1.0"
 
 [dependencies]
 cortex-m = "0.7.0"
 cortex-m-rt = "0.7.3"
-cortex-m-semihosting = "0.3.3"
 nb = "1.1.0"
 panic-halt = "0.2.0"
+rtt-target = "0.4.0"
 
 [dependencies.stm32f4xx-hal]
 version = "0.17.1"
@@ -26,7 +26,7 @@ features = ["stm32f411", "rt"] # replace the model of your microcontroller here
 
 # this lets you use `cargo fix`!
 [[bin]]
-name = "stm32f4_template"
+name = "pwm-esc-controller"
 test = false
 bench = false
 
