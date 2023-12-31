@@ -1,4 +1,4 @@
-# PWM ESC Controller
+# ESC Controller
  > Control ESCs in Embedded Rust
 
 [![Language](https://img.shields.io/badge/Language-Rust-orange.svg)](https://www.rust-lang.org/)
@@ -18,7 +18,7 @@ The ESC I used is the **LITTLEBEE 30A**, which includes the BLHeli S software. U
 <img width="1247" alt="image" src="https://github.com/KG-Drone-Project/PWM-ESC-Controller/assets/25258108/eca774d8-6ee6-421e-829f-772910728210">
 
 From the image above, I can discern that the ESC needs to detect zero throttle for a normal start up. Afterwards, the motor will run to the user's specifity.  
-```
+``` rust
 // Zero signal
 rprintln!("Zero signal");
 ch1.set_duty(max_duty / 20);
@@ -28,7 +28,6 @@ delay.delay_ms(10000_u32);
 
 rprintln!("Mid-throttle signal");
 ch1.set_duty(max_duty / 18);
-
 ```
 In the code above, I send an initial zero throttle signal to run the ESCs normal start-up process. I also introduce a slight delay so the ESC can register the zero throttle signal. Afterwards, I can send whatever throttle signal I would like to send. 
 
